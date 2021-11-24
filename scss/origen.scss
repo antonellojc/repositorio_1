@@ -1,0 +1,388 @@
+body{background-color: black;}
+h2{color: #73de7a;}
+h3{color: #73de7a;}
+h4{color: #73de7a;}
+p{color: #73de7a;}
+a{color: #73de7a ;
+text-decoration: none;}
+
+#header{
+  grid-area: header;
+  background-color: black;
+}
+#seccion{
+  grid-area: seccion;
+  width: 50%;
+  background-color: black;
+  margin-top: 10px;
+}
+#footer{
+  grid-area: footer;
+  width: 100%;
+}
+
+/*operaciones sass*/
+
+$black: black;
+$opacity: 100%;
+
+.releases{
+         background-color: $black;
+          opacity: $opacity/2;}
+
+@media only screen and (min-width: 1024px){
+
+.inicio {
+  margin: 0 20px;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-areas:
+  "header header header"
+  "seccion seccion seccion"
+  "footer footer footer";
+  grid-template-rows: 100px auto 150px;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.header__titulo{ 
+color: #73de7a;
+font-style: italic; 
+}
+
+.header__animacion{
+  h1 {
+   animation-duration: 2s;
+   animation-name: aparecer;
+}
+
+
+@keyframes aparecer {
+   0% {
+     opacity: 0;
+   }
+   100% {
+     opacity: 1;
+   }
+}
+
+}
+
+.seccion__contenido{
+}
+
+.seccion__releases{
+  opacity: 50%;
+}
+
+.footer__contenido{
+  background-color: black;
+}
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1023px){
+.header__titulo{ 
+color: #74d8db;
+font-style: bold;
+}
+.seccion__releases{
+opacity: 30%;
+}
+  
+}
+
+
+@media only screen and (max-width: 767px){
+  .header__titulo{
+  color: #a973de;
+  font-style: italic;
+  }
+}
+
+/*about about about*/
+$ancho: 720px;
+$mobile: 578px;
+$tablet: 992px;
+$desktop: 1200px;
+
+/*operaciones sass*/
+
+.parrafo{
+@if $ancho > $mobile{
+color: #a973de;
+}
+@else if $ancho > $tablet{
+color: #74d8db; 
+}
+@else if $ancho > $desktop{
+color: #73de7a;
+}
+  
+}
+
+
+
+
+@media only screen and (min-width: 1024px){
+
+.about {
+  margin: 0 20px;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-areas:
+  "header header header"
+  "seccion seccion seccion"
+  "footer footer footer";
+  grid-template-rows: 200px auto 150px;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.header__titulo{ 
+color: #73de7a;
+font-style: italic;
+}
+
+.header__animacion{
+  h1 {
+   animation-duration: 2s;
+   animation-name: aparecer;
+}
+
+
+@keyframes aparecer {
+   0% {
+     opacity: 0;
+   }
+   100% {
+     opacity: 1;
+   }
+}
+}
+
+.seccion__contenido{
+align: center;}
+
+.seccion__parrafo{
+font-size: 20px;
+}
+
+.seccion__animacion div p{
+  transition: all 2s;       
+}
+div p:hover {
+   font-size: 25px;
+}
+
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1023px){
+
+.header__titulo{ 
+color: #74d8db;
+font-style: bold;
+}
+
+.seccion__parrafo div p {
+font-size: 15px;
+color: #74d8db;
+font-style: italic;
+}
+
+.seccion__animacion div p {
+  transition: all 2s;       
+}
+div p:hover {
+   font-size: 20px;
+}
+}
+
+@media only screen and (max-width: 767px){
+  .header__titulo{
+  color: #a973de;
+  font-style: italic;
+  }
+
+.seccion__parrafo div p{
+font-size: 10px;
+color: #a973de;
+font-style: italic;
+}
+
+.seccion__animacion div p{
+  transition: all 2s;       
+}
+div p:hover {
+   font-size: 15px;
+}
+}
+
+/*contacto contacto contacto*/
+
+/*operaciones sass*/
+
+$nombre: pepe;
+.formulario input {
+      @if $nombre == pepe {
+             color: red;
+      } @else if $nombre == juan {
+                 color: blue;
+     } @else if $nombre == maria {
+                color: green;
+     } @else {
+                color: black;
+      }
+}
+
+
+@media only screen and (min-width: 1024px){
+
+.contacto{
+  margin: 0 20px;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-areas:
+  "header header header"
+  "seccion seccion seccion"
+  "footer footer footer";
+  grid-template-rows: 200px auto 150px;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.header__titulo{ 
+color: #73de7a;
+font-style: italic;
+}
+
+.header__animacion{
+  h1 {
+   animation-duration: 2s;
+   animation-name: aparecer;
+}
+
+
+@keyframes aparecer {
+   0% {
+     opacity: 0;
+   }
+   100% {
+     opacity: 1;
+   }
+}
+}
+.seccion__contenido{
+align-content: center;
+}
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1023px){
+
+.header__titulo{ 
+color: #74d8db;
+font-style: bold;
+}
+}
+
+@media only screen and (max-width: 767px){
+  .header__titulo{
+  color: #a973de;
+  font-style: italic;
+  }
+}
+
+
+/*galeria galeria galeria*/
+
+@media only screen and (min-width: 1024px){
+
+.galeria {
+  margin: 0 20px;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-areas:
+  "header header header"
+  "seccion seccion seccion"
+  "footer footer footer";
+  grid-template-rows: 100px auto 150px;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.header__titulo{ 
+color: #73de7a;
+font-style: italic; 
+}
+
+.header__animacion{
+  h1 {
+   animation-duration: 2s;
+   animation-name: aparecer;
+}
+
+
+@keyframes aparecer {
+   0% {
+     opacity: 0;
+   }
+   100% {
+     opacity: 1;
+   }
+}
+
+.seccion__galeria{
+width: 100%;
+}
+}
+}
+
+/*videos videos videos*/
+
+
+@media only screen and (min-width: 1024px){
+
+.videos {
+  margin: 0 20px;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-areas:
+  "header header header"
+  "seccion seccion seccion"
+  "footer footer footer";
+  grid-template-rows: 100px auto 150px;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.header__titulo{ 
+color: #73de7a;
+font-style: italic; 
+}
+
+.header__animacion{
+  h1 {
+   animation-duration: 2s;
+   animation-name: aparecer;
+}
+
+
+@keyframes aparecer {
+   0% {
+     opacity: 0;
+   }
+   100% {
+     opacity: 1;
+   }
+}
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1023px){
+  
+.seccion__videos{
+  width: 40%;
+}
+}
+}
+
+
+
+
+
+
+
+
